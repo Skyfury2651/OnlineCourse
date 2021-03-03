@@ -49,6 +49,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -167,16 +169,38 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CourseController.cs" />
+    <Compile Include="Areas\Instructor\InstructorAreaRegistration.cs" />
+    <Compile Include="Areas\Organization\OrganizationAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AspNetRole.cs" />
+    <Compile Include="Models\AspNetUser.cs" />
+    <Compile Include="Models\AspNetUserClaim.cs" />
+    <Compile Include="Models\AspNetUserLogin.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Course.cs" />
+    <Compile Include="Models\C__MigrationHistory.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Lecture.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Model2.cs" />
+    <Compile Include="Models\Organization.cs" />
+    <Compile Include="Models\Rate.cs" />
+    <Compile Include="Models\Result.cs" />
+    <Compile Include="Models\Section.cs" />
     <Compile Include="Models\SendMail.cs" />
+    <Compile Include="Models\Test.cs" />
+    <Compile Include="Models\Transaction.cs" />
+    <Compile Include="Models\UserCourse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -191,6 +215,18 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Course\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Course\Dashboard.cshtml" />
+    <Content Include="Areas\Instructor\Views\web.config" />
+    <Content Include="Areas\Organization\Views\web.config" />
+    <Content Include="Areas\Instructor\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Instructor\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Instructor\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\AdminIndex.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\UserIndex.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -237,9 +273,16 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Course\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Instructor\Controllers\" />
+    <Folder Include="Areas\Instructor\Data\" />
+    <Folder Include="Areas\Organization\Controllers\" />
+    <Folder Include="Areas\Organization\Data\" />
+    <Folder Include="Areas\Organization\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -253,6 +296,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

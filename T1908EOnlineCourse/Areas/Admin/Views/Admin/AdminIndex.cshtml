@@ -1,0 +1,8 @@
+﻿@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "AdminIndex";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@User.Identity.GetUserId()</h2>
+
