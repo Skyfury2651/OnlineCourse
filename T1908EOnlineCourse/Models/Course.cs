@@ -34,6 +34,7 @@ namespace T1908EOnlineCourse.Models
         public int? category_id { get; set; }
 
         public int? organization_id { get; set; }
+        public string image { get; set; }
 
         public virtual Category Category { get; set; }
 

@@ -21,7 +21,7 @@ namespace T1908EOnlineCourse.Areas.Admin.Controllers
         {
             _dbContext = new Model2();
         }
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "")]
         public async Task<ActionResult> Index()
         {
             string userId = User.Identity.GetUserId();
@@ -33,7 +33,7 @@ namespace T1908EOnlineCourse.Areas.Admin.Controllers
             //var getuser = _dbContext.AspNetUsers.FindAsync(userId);
             var currentUser = _dbContext.AspNetUsers.Where(i => i.Id == userId).FirstOrDefault();
             var data = (from s in _dbContext.AspNetUsers select s).ToList();
-
+            ViewBag.UserList = data;
 
             return View("AdminIndex",data);
         }

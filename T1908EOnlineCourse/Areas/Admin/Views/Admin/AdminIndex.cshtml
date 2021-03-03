@@ -4,5 +4,9 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@User.Identity.GetUserId()</h2>
-
+<ul>
+    @foreach (T1908EOnlineCourse.Models.AspNetUser person in ViewBag.UserList)
+    {
+        <li>@person.Email</li>
+    }
+</ul>
