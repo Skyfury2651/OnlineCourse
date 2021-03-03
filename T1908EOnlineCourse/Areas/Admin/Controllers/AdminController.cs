@@ -21,15 +21,17 @@ namespace T1908EOnlineCourse.Areas.Admin.Controllers
         {
             _dbContext = new Model2();
         }
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult> Index()
         {
-            //string userId = User.Identity.GetUserId();
+            string userId = User.Identity.GetUserId();
             ////var roles = UserManager.GetRoles(userId);
             ////var roles = Roles.GetRolesForUser();
             //var claims = ClaimsPrincipal.Current.Identities.First().Claims.ToList();
             ////Filter specific claim    
             //var AdminRole = claims?.FirstOrDefault(x => x.Value.Equals("User", StringComparison.OrdinalIgnoreCase))?.Value;
             //var getuser = _dbContext.AspNetUsers.FindAsync(userId);
+            var currentUser = _dbContext.AspNetUsers.Where(i => i.Id == userId).FirstOrDefault();
             var data = (from s in _dbContext.AspNetUsers select s).ToList();
 
 

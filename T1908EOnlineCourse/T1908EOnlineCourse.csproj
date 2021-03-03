@@ -181,6 +181,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103031147276_Initial.cs" />
+    <Compile Include="Migrations\202103031147276_Initial.Designer.cs">
+      <DependentUpon>202103031147276_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103031200539_SeedingCategory.cs" />
+    <Compile Include="Migrations\202103031200539_SeedingCategory.Designer.cs">
+      <DependentUpon>202103031200539_SeedingCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AspNetRole.cs" />
     <Compile Include="Models\AspNetUser.cs" />
@@ -299,6 +308,14 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202103031147276_Initial.resx">
+      <DependentUpon>202103031147276_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103031200539_SeedingCategory.resx">
+      <DependentUpon>202103031200539_SeedingCategory.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

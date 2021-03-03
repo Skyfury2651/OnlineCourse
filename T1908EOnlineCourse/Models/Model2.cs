@@ -4,6 +4,7 @@ namespace T1908EOnlineCourse.Models
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
+    using System.Collections.Generic;
 
     public partial class Model2 : DbContext
     {
@@ -167,6 +168,37 @@ namespace T1908EOnlineCourse.Models
             modelBuilder.Entity<Transaction>()
                 .Property(e => e.price)
                 .HasPrecision(18, 0);
+        }
+        private class UniDBInitializer<T> : DropCreateDatabaseAlways<Model2>
+        {
+
+            protected override void Seed(Model2 context)
+            {
+
+                IList<Category> students = new List<Category>();
+
+                students.Add(new Category()
+                {
+                    id = 1,
+                    name = "English"
+                });
+
+                students.Add(new Category()
+                {
+                    id = 2,
+                    name = "Math"
+                });
+
+                students.Add(new Category()
+                {
+                    id = 3,
+                    name = "Histories"
+                });
+
+                foreach (Category student in students)
+                    context.Categories.Add(student);
+                base.Seed(context);
+            }
         }
     }
 }

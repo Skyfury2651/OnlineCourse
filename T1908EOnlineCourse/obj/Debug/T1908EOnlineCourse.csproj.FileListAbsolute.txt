@@ -106,3 +106,6 @@ G:\Visual\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.csproj.Co
 G:\Visual\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.csproj.CopyComplete
 G:\Visual\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.dll
 G:\Visual\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.pdb
+G:\Visual\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.Migrations.Initial.resources
+G:\Visual\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.csproj.GenerateResource.cache
+G:\Visual\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.Migrations.SeedingCategory.resources
