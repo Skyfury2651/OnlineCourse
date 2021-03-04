@@ -9,12 +9,6 @@ namespace T1908EOnlineCourse.Models
     [Table("Organization")]
     public partial class Organization
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Organization()
-        {
-            Courses = new HashSet<Course>();
-        }
-
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id { get; set; }
 
@@ -30,7 +24,5 @@ namespace T1908EOnlineCourse.Models
         [StringLength(255)]
         public string thumbnail { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Course> Courses { get; set; }
     }
 }

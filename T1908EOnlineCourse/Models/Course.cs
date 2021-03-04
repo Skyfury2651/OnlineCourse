@@ -33,11 +33,9 @@ namespace T1908EOnlineCourse.Models
 
         public int? category_id { get; set; }
 
-        public int? organization_id { get; set; }
+        public string image { get; set; }
 
         public virtual Category Category { get; set; }
-
-        public virtual Organization Organization { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Rate> Rates { get; set; }

@@ -129,11 +129,6 @@ namespace T1908EOnlineCourse.Models
                 .Property(e => e.thumbnail)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Organization>()
-                .HasMany(e => e.Courses)
-                .WithOptional(e => e.Organization)
-                .HasForeignKey(e => e.organization_id);
-
             modelBuilder.Entity<Rate>()
                 .Property(e => e.content)
                 .IsUnicode(false);
