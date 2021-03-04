@@ -1,7 +1,71 @@
 ﻿
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Course";
+    Layout = "~/Views/Shared/_LayoutClient.cshtml";
 }
+@model List<T1908EOnlineCourse.Models.Course>
+<div class="search_input" id="search_input_box">
+    <div class="container">
+        <form class="d-flex justify-content-between" method="GET" action="/Course/Index">
+            <input type="text"
+                   class="form-control"
+                   id="search_input"
+                   name="search_input"
+                   placeholder="Search Here" />
+            <button type="submit" class="btn"></button>
+            <span class="ti-close"
+                  id="close_search"
+                  title="Close Search"></span>
+        </form>
+    </div>
+</div>
 
-<h2>Index</h2>
 
+<div class="popular_courses section_gap_top">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="main_title">
+                    <h2 class="mb-3">Our Popular Courses</h2>
+                    <p>
+                        Replenish man have thing gathering lights yielding shall you
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- single course -->
+            <div class="col-lg-12">
+                <div class="owl-carousel active_course">
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (var item in Model)
+                        {
+                            <div class="single_course">
+                                <div class="course_head">
+                                    <img class="img-fluid" src="@item.image" alt="" />
+                                </div>
+                                <div class="course_content">
+                                    <span class="price">@item.price</span>
+                                    <span class="tag mb-4 d-inline-block">design</span>
+                                    <h4 class="mb-3">
+                                        <a href="course-details.html">@item.name</a>
+                                    </h4>
+                                    <p>
+                                        @item.description
+                                    </p>
+
+                                </div>
+                            </div>
+                        }
+                    }
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--================ End Popular Courses Area =================-->
