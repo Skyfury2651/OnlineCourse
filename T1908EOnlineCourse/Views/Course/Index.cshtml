@@ -50,7 +50,7 @@
                                     <span class="price">@item.price</span>
                                     <span class="tag mb-4 d-inline-block">design</span>
                                     <h4 class="mb-3">
-                                        <a href="course-details.html">@item.name</a>
+                                        @Html.ActionLink(item.name, "DetailCourse", "Course", new { id = item.id },null)
                                     </h4>
                                     <p>
                                         @item.description

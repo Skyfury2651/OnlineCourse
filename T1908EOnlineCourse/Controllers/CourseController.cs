@@ -20,8 +20,13 @@ namespace T1908EOnlineCourse.Controllers
             return View(data);
         }
         public ActionResult DetailCourse(int id)
-        {
-            return View();
+        { 
+            var data = _db.Courses.Find(id);
+            if ( data == null)
+            {
+                return HttpNotFound();
+            }
+            return View(data);
         }
     }
 
