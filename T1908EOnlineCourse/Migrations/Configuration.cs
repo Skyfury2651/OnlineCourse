@@ -20,14 +20,39 @@ namespace T1908EOnlineCourse.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
             context.Categories.AddOrUpdate(c => c.id,
-              new Models.Category { id = 1, name = @"Front-End", image = @"qqqq" },
-              new Models.Category { id = 2, name = @"Back-End", image = @"string" },
-              new Models.Category { id = 3, name = @"Dev-Ops", image = @"string" },
-              new Models.Category { id = 4, name = @"Bussiness-Analystic", image = @"string" },
-              new Models.Category { id = 5, name = @"Project Manage", image = @"string" }
+              new Models.Category
+              {
+                  id = 1,
+                  name = @"Front-End",
+                  image = @"qqqq"
+              },
+              new Models.Category
+              {
+                  id = 2,
+                  name = @"Back-End",
+                  image = @"string"
+              },
+              new Models.Category
+              {
+                  id = 3,
+                  name = @"Dev-Ops",
+                  image = @"string"
+              },
+              new Models.Category
+              {
+                  id = 4,
+                  name = @"Bussiness-Analystic",
+                  image = @"string"
+              },
+              new Models.Category
+              {
+                  id = 5,
+                  name = @"Project Manage",
+                  image = @"string"
+              }
               );
 
-           
+
             context.Courses.AddOrUpdate(x => x.id,
                 new Models.Course
                 {
@@ -58,6 +83,36 @@ namespace T1908EOnlineCourse.Migrations
                     status = 1,
                     price = 30,
                     image = "https://repository-images.githubusercontent.com/134285701/635de980-586d-11ea-9220-1a3211239c30"
+                },
+                new Models.Course
+                {
+                    id = 4,
+                    category_id = 3,
+                    description = "Node JS BeginCourse",
+                    name = "NodeJS beginner",
+                    status = 1,
+                    price = 30,
+                    image = "https://cdn.thenewstack.io/media/2016/04/nodejs.jpg"
+                },
+                new Models.Course
+                {
+                    id = 5,
+                    category_id = 3,
+                    description = "A very common task in HTML , or statistics about your favorite dinosaurs or football team. This module takes you through all you need to know about structuring tabular data using HTML.",
+                    name = "Python Course",
+                    status = 1,
+                    price = 30,
+                    image = "https://devu.in/wp-content/uploads/2020/01/Python-Training-in-bangalore.jpg"
+                },
+                new Models.Course
+                {
+                    id = 6,
+                    category_id = 3,
+                    description = "A very common task in HTML , or statistics about your favorite dinosaurs or football team. This module takes you through all you need to know about structuring tabular data using HTML.",
+                    name = "Marketing",
+                    status = 1,
+                    price = 30,
+                    image = "http://skillsdiver.com/wp-content/uploads/2018/11/192_-300x195.png"
                 }
                 );
 
@@ -81,7 +136,43 @@ namespace T1908EOnlineCourse.Migrations
                     course_id = 1
                 }
                 );
-
+            context.Lectures.AddOrUpdate(x => x.id,
+                new Models.Lecture
+                {
+                    id = 1,
+                    source = "https://youtu.be/bWPMSSsVdPk",
+                    type = (int?)Models.Lecture.LectureType.MP4,
+                    section_id = 1,
+                },
+                new Models.Lecture
+                {
+                    id = 2,
+                    source = "https://youtu.be/wyx0kXKdqU8",
+                    type = (int?)Models.Lecture.LectureType.MP4,
+                    section_id = 2,
+                },
+                new Models.Lecture
+                {
+                    id = 3,
+                    source = "https://youtu.be/ZWp1s1DhwDc",
+                    type = (int?)Models.Lecture.LectureType.MP4,
+                    section_id = 2,
+                },
+                new Models.Lecture
+                {
+                    id = 4,
+                    source = "https://youtu.be/9F49XgzlZgA",
+                    type = (int?)Models.Lecture.LectureType.MP4,
+                    section_id = 3,
+                },
+                new Models.Lecture
+                {
+                    id = 5,
+                    source = "https://youtu.be/XAowXcmQ-kA",
+                    type = (int?)Models.Lecture.LectureType.MP4,
+                    section_id = 3,
+                }
+                );
         }
     }
 }

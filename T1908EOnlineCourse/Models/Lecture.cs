@@ -19,5 +19,10 @@ namespace T1908EOnlineCourse.Models
         public int? section_id { get; set; }
 
         public virtual Section Section { get; set; }
+
+        public enum LectureType
+        {
+            DOC = 1 , MP4 = 2 , LINK = 3
+        }
     }
 }
