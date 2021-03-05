@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PagedList;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,23 +11,49 @@ namespace T1908EOnlineCourse.Controllers
     public class CourseController : Controller
     {
         Model2 _db = new Model2();
-        public ActionResult Index(string search_input)
+        public int pageSize = 2;
+
+        public ActionResult Index(string search_input, int? page, string currentFilter)
         {
+            var categories = _db.Categories.ToList();
+            ViewBag.categories = categories;
             var data = _db.Courses.ToList();
+            if (search_input != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                search_input = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = search_input;
+
             if (!string.IsNullOrEmpty(search_input))
             {
                 data = data.Where(x => x.name.ToLower().Contains(search_input.Trim().ToLower())).ToList();
             }
-            return View(data);
+
+            int pageSize = 1;
+            int pageNumber = (page ?? 1);
+            return View(data.ToPagedList(pageNumber, pageSize));
         }
         public ActionResult DetailCourse(int id)
-        { 
+        {
             var data = _db.Courses.Find(id);
-            if ( data == null)
+            if (data == null)
             {
                 return HttpNotFound();
             }
             return View(data);
+        }
+        public ActionResult FilterCategories(int id)
+        {
+            var categories = _db.Categories.ToList();
+            ViewBag.categories = categories;
+            var data = _db.Courses.Where(x => x.category_id == id).ToList();
+
+            return View("Index", data);
         }
     }
 
