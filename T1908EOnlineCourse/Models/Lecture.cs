@@ -14,7 +14,6 @@ namespace T1908EOnlineCourse.Models
 
         public int? type { get; set; }
 
-        [StringLength(255)]
         public string source { get; set; }
 
         public int? section_id { get; set; }

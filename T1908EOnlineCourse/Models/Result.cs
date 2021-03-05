@@ -17,7 +17,6 @@ namespace T1908EOnlineCourse.Models
         [StringLength(128)]
         public string user_id { get; set; }
 
-        [StringLength(255)]
         public string link { get; set; }
 
         public int? status { get; set; }

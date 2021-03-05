@@ -196,6 +196,14 @@
     <Compile Include="Migrations\202103041250083_addImage.Designer.cs">
       <DependentUpon>202103041250083_addImage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103051230247_RemoveStringLimit.cs" />
+    <Compile Include="Migrations\202103051230247_RemoveStringLimit.Designer.cs">
+      <DependentUpon>202103051230247_RemoveStringLimit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103051309339_RemoveLimit.cs" />
+    <Compile Include="Migrations\202103051309339_RemoveLimit.Designer.cs">
+      <DependentUpon>202103051309339_RemoveLimit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AspNetRole.cs" />
@@ -2337,6 +2345,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103041250083_addImage.resx">
       <DependentUpon>202103041250083_addImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103051230247_RemoveStringLimit.resx">
+      <DependentUpon>202103051230247_RemoveStringLimit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103051309339_RemoveLimit.resx">
+      <DependentUpon>202103051309339_RemoveLimit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
