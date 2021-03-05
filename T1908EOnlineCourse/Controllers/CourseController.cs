@@ -19,15 +19,10 @@ namespace T1908EOnlineCourse.Controllers
             }
             return View(data);
         }
-        //public ActionResult SearchCourse(string search_input)
-        //{
-        //    var model = _db.Courses.ToList();
-        //    if (!string.IsNullOrEmpty(search_input))
-        //    {
-        //        model = model.Where(x => x.name.ToLower().Contains(search_input.Trim().ToLower())).ToList();
-        //    }
-        //    return View(model);
-        //}
+        public ActionResult DetailCourse(int id)
+        {
+            return View();
+        }
     }
-    
+
 }
