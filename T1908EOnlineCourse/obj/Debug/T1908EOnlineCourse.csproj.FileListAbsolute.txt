@@ -217,7 +217,6 @@ C:\Users\admin\Desktop\abc\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlin
 C:\Users\admin\Desktop\abc\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.csproj.GenerateResource.cache
 C:\Users\admin\Desktop\abc\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.Migrations.NewMigration.resources
 C:\Users\admin\Desktop\abc\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.Migrations.DeleteOrganizationId.resources
-C:\Users\admin\Desktop\abc\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.csprojAssemblyReference.cache
 C:\Users\admin\Desktop\abc\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.Migrations.addImage.resources
 C:\Users\admin\Desktop\abc\OnlineCourse\T1908EOnlineCourse\bin\PagedList.dll
 C:\Users\admin\Desktop\abc\OnlineCourse\T1908EOnlineCourse\bin\PagedList.Mvc.dll
