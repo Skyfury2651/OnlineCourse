@@ -72,7 +72,7 @@ namespace T1908EOnlineCourse.Migrations
                     description = "C#,C++ is the code that is used to learn.",
                     status = 1,
                     price = 10,
-                    image = "https://www.duomly.com/course/courseimg/courses/courseID12/course-12-html---css-basics.jpg"
+                    image = "https://repository-images.githubusercontent.com/134285701/635de980-586d-11ea-9220-1a3211239c30"
                 },
                 new Models.Course
                 {
