@@ -14,11 +14,15 @@ namespace T1908EOnlineCourse.Models
 
         public int? type { get; set; }
 
-        [StringLength(255)]
         public string source { get; set; }
 
         public int? section_id { get; set; }
 
         public virtual Section Section { get; set; }
+
+        public enum LectureType
+        {
+            DOC = 1 , MP4 = 2 , LINK = 3
+        }
     }
 }

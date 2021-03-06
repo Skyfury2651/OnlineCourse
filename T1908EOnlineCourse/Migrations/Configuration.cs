@@ -20,61 +20,160 @@ namespace T1908EOnlineCourse.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
             context.Categories.AddOrUpdate(c => c.id,
-              new Models.Category { id = 1, name = @"Front-End" , image = @"qqqq"},
-              new Models.Category { id = 2, name = @"Back-End", image = @"string" },
-              new Models.Category { id = 3, name = @"Dev-Ops", image = @"string" },
-              new Models.Category { id = 4, name = @"Bussiness-Analystic", image = @"string" },
-              new Models.Category { id = 5, name = @"Project Manage", image = @"string" }
+              new Models.Category
+              {
+                  id = 1,
+                  name = @"Front-End",
+                  image = @"qqqq"
+              },
+              new Models.Category
+              {
+                  id = 2,
+                  name = @"Back-End",
+                  image = @"string"
+              },
+              new Models.Category
+              {
+                  id = 3,
+                  name = @"Dev-Ops",
+                  image = @"string"
+              },
+              new Models.Category
+              {
+                  id = 4,
+                  name = @"Bussiness-Analystic",
+                  image = @"string"
+              },
+              new Models.Category
+              {
+                  id = 5,
+                  name = @"Project Manage",
+                  image = @"string"
+              }
               );
-            //context.Courses.AddOrUpdate(c => c.id,
-            //new Models.Course
-            //{
-            //    id = 1,
-            //    category_id = 1,
-            //    name = @"HTML",
-            //    description = @"So what is HTML? HTML is a markup language that defines the structure of your content. HTML consists of a series of elements, which you use to enclose, or wrap, different parts of the content to make it appear a certain way, or act a certain way. The enclosing tags can make a word or image hyperlink to somewhere else, can italicize words, can make the font bigger or smaller, and so on.  For example, take the following line of content:
 
-            //My cat is very grumpy
-            //If we wanted the line to stand by itself, we could specify that it is a paragraph by enclosing it in paragraph tags:
 
-            //<p>My cat is very grumpy</p>",
-            //    price = 28,
-            //    status = 1,
-            //    image = "string"
-            //}
-            //);
             context.Courses.AddOrUpdate(x => x.id,
                 new Models.Course
                 {
                     id = 1,
                     category_id = 1,
-                    description = "text",
-                    name = "test",
+                    description = "We've looked at a lot of text so far in this and how to embed video, audio, and even entire webpages.",
+                    name = "HTML Basic",
                     status = 1,
-                    price = 1000,
-                    image = "https://www.duomly.com/course/courseimg/courses/courseID12/course-12-html---css-basics.jpg"
+                    price = 20,
+                    image = "https://1.bp.blogspot.com/-bRc_6ua8YhA/XMWuToHKzkI/AAAAAAAAN3k/ZasbNr9q2FEmgSt957ypx9SnGbjgjX92QCLcBGAs/w1200-h630-p-k-no-nu/Build%2BResponsive%2BReal%2BWorld%2BWebsites%2Bwith%2BHTML5%2Band%2BCSS3%2BUdemy%2Bcourse.png"
                 },
-            new Models.Course
-            {
-                id = 2,
-                category_id = 1,
-                description = "text",
-                name = "test",
-                status = 1,
-                price = 1000,
-                image = "222"
-            },
-            new Models.Course
-            {
-                id = 3,
-                category_id = 1,
-                description = "text",
-                name = "test",
-                status = 1,
-                price = 1000,
-                image = "222"
-            }
-            );
+                new Models.Course
+                {
+                    id = 2,
+                    name = "Introduction C#,C++",
+                    category_id = 2,
+                    description = "C#,C++ is the code that is used to learn.",
+                    status = 1,
+                    price = 10,
+                    image = "https://repository-images.githubusercontent.com/134285701/635de980-586d-11ea-9220-1a3211239c30"
+                },
+                new Models.Course
+                {
+                    id = 3,
+                    category_id = 3,
+                    description = "A very common task in HTML , or statistics about your favorite dinosaurs or football team. This module takes you through all you need to know about structuring tabular data using HTML.",
+                    name = "Introduction Dev-Ops",
+                    status = 1,
+                    price = 30,
+                    image = "https://repository-images.githubusercontent.com/134285701/635de980-586d-11ea-9220-1a3211239c30"
+                },
+                new Models.Course
+                {
+                    id = 4,
+                    category_id = 3,
+                    description = "Node JS BeginCourse",
+                    name = "NodeJS beginner",
+                    status = 1,
+                    price = 30,
+                    image = "https://cdn.thenewstack.io/media/2016/04/nodejs.jpg"
+                },
+                new Models.Course
+                {
+                    id = 5,
+                    category_id = 3,
+                    description = "A very common task in HTML , or statistics about your favorite dinosaurs or football team. This module takes you through all you need to know about structuring tabular data using HTML.",
+                    name = "Python Course",
+                    status = 1,
+                    price = 30,
+                    image = "https://devu.in/wp-content/uploads/2020/01/Python-Training-in-bangalore.jpg"
+                },
+                new Models.Course
+                {
+                    id = 6,
+                    category_id = 3,
+                    description = "A very common task in HTML , or statistics about your favorite dinosaurs or football team. This module takes you through all you need to know about structuring tabular data using HTML.",
+                    name = "Marketing",
+                    status = 1,
+                    price = 30,
+                    image = "http://skillsdiver.com/wp-content/uploads/2018/11/192_-300x195.png"
+                }
+                );
+
+            context.Sections.AddOrUpdate(x => x.id,
+                new Models.Section
+                {
+                    id = 1,
+                    name = "Introduction to HTML",
+                    course_id = 1
+                },
+                new Models.Section
+                {
+                    id = 2,
+                    name = "Multimedia and embedding",
+                    course_id = 1
+                },
+                new Models.Section
+                {
+                    id = 3,
+                    name = "HTML tables",
+                    course_id = 1
+                }
+                );
+            context.Lectures.AddOrUpdate(x => x.id,
+                new Models.Lecture
+                {
+                    id = 1,
+                    source = "https://youtu.be/bWPMSSsVdPk",
+                    type = (int?)Models.Lecture.LectureType.MP4,
+                    section_id = 1,
+                },
+                new Models.Lecture
+                {
+                    id = 2,
+                    source = "https://youtu.be/wyx0kXKdqU8",
+                    type = (int?)Models.Lecture.LectureType.MP4,
+                    section_id = 2,
+                },
+                new Models.Lecture
+                {
+                    id = 3,
+                    source = "https://youtu.be/ZWp1s1DhwDc",
+                    type = (int?)Models.Lecture.LectureType.MP4,
+                    section_id = 2,
+                },
+                new Models.Lecture
+                {
+                    id = 4,
+                    source = "https://youtu.be/9F49XgzlZgA",
+                    type = (int?)Models.Lecture.LectureType.MP4,
+                    section_id = 3,
+                },
+                new Models.Lecture
+                {
+                    id = 5,
+                    source = "https://youtu.be/XAowXcmQ-kA",
+                    type = (int?)Models.Lecture.LectureType.MP4,
+                    section_id = 3,
+                }
+                );
         }
     }
 }
+

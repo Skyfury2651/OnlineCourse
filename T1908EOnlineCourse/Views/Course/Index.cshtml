@@ -1,7 +1,197 @@
-﻿
+﻿@using PagedList.Mvc;
+@using PagedList;
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Course";
+    Layout = "~/Views/Shared/_LayoutClient.cshtml";
 }
 
-<h2>Index</h2>
+@model PagedList.IPagedList<T1908EOnlineCourse.Models.Course>
 
+<div class="search_input" id="search_input_box">
+    <div class="container">
+        <form class="d-flex justify-content-between" method="GET" action="/Course/Index">
+            <input type="text"
+                   class="form-control"
+                   id="search_input"
+                   name="search_input"
+                   placeholder="Search Here" />
+            <button type="submit" class="btn"></button>
+            <span class="ti-close"
+                  id="close_search"
+                  title="Close Search"></span>
+        </form>
+    </div>
+</div>
+
+
+<div class="popular_courses section_gap_top">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="main_title">
+                    <h2 class="mb-3">Our Popular Courses</h2>
+                    <p>
+                        Replenish man have thing gathering lights yielding shall you
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <div class="content" style="border:1px solid; height:500px">
+                    <ul class="course_list mt-5">
+                        <li class="justify-content-between d-flex">
+                            @Html.ActionLink("All Categories", "Index", "Course")
+                        </li>
+                        @foreach (T1908EOnlineCourse.Models.Category item in ViewBag.categories)
+                        {
+                            <li class="justify-content-between d-flex mt-5">
+                                @Html.ActionLink(item.name, "FilterCategories", "Course", new { id = item.id }, null)
+                            </li>
+                        }
+                        @*<a class="primary-btn text-uppercase" href="#">View Details</a>*@
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-10">
+                <div class="row">
+                    <!-- single course -->
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (var item in Model)
+                        {
+                            <div class="col-4">
+                                <div class="single_course">
+                                    <div class="course_head">
+                                        <img class="img-fluid" src="@item.image" alt="" />
+                                    </div>
+                                    <div class="course_content">
+                                        <span class="price">@item.price</span>
+                                        <span class="tag mb-4 d-inline-block">design</span>
+                                        <h4 class="mb-3">
+                                            @Html.ActionLink(item.name, "DetailCourse", "Course", new { id = item.id }, null)
+                                        </h4>
+                                        <p>
+                                            @item.description
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }),PagedListRenderOptions.Classic)
+<style>
+    .pagination {
+        display: compact;
+        padding-left: 0;
+        margin: 0;
+        border-radius: 4px;
+    }
+
+        .pagination > li {
+            display: inline-grid;
+        }
+
+            .pagination > li > a,
+            .pagination > li > span {
+                position: relative;
+                float: left;
+                padding: 0;
+                margin-left: -1px;
+                line-height: 1.428571429;
+                text-decoration: none;
+                background-color: #eee;
+                border: 1px solid #dddddd;
+            }
+
+            .pagination > li:first-child > a,
+            .pagination > li:first-child > span {
+                margin-left: 0;
+                border-bottom-left-radius: 4px;
+                border-top-left-radius: 4px;
+            }
+
+            .pagination > li:last-child > a,
+            .pagination > li:last-child > span {
+                border-top-right-radius: 4px;
+                border-bottom-right-radius: 4px;
+            }
+
+            .pagination > li > a:hover,
+            .pagination > li > span:hover,
+            .pagination > li > a:focus,
+            .pagination > li > span:focus {
+                background-color: #eeeeee;
+            }
+
+        .pagination > .active > a,
+        .pagination > .active > span,
+        .pagination > .active > a:hover,
+        .pagination > .active > span:hover,
+        .pagination > .active > a:focus,
+        .pagination > .active > span:focus {
+            z-index: 2;
+            color: #000;
+            cursor: default;
+            background-color: #428bca;
+            border-color: #428bca;
+        }
+
+        .pagination > .disabled > span,
+        .pagination > .disabled > a,
+        .pagination > .disabled > a:hover,
+        .pagination > .disabled > a:focus {
+            color: #999999;
+            cursor: not-allowed;
+            background-color: #eee;
+            border-color: #dddddd;
+        }
+
+    .pagination-lg > li > a,
+    .pagination-lg > li > span {
+        padding: 0;
+        font-size: 18px;
+    }
+
+    .pagination-lg > li:first-child > a,
+    .pagination-lg > li:first-child > span {
+        border-bottom-left-radius: 6px;
+        border-top-left-radius: 6px;
+    }
+
+    .pagination-lg > li:last-child > a,
+    .pagination-lg > li:last-child > span {
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+    }
+
+    .pagination-sm > li > a,
+    .pagination-sm > li > span {
+        padding: 0;
+        font-size: 12px;
+    }
+
+    .pagination-sm > li:first-child > a,
+    .pagination-sm > li:first-child > span {
+        border-bottom-left-radius: 3px;
+        border-top-left-radius: 3px;
+    }
+    .pagination-sm > li:last-child > a,
+    .pagination-sm > li:last-child > span {
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+
+</style>
+<!--================ End Popular Courses Area =================-->
