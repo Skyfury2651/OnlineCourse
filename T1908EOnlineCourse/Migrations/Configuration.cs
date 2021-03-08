@@ -173,6 +173,116 @@ namespace T1908EOnlineCourse.Migrations
                     section_id = 3,
                 }
                 );
+            context.Rates.AddOrUpdate(x => x.id,
+                
+                new Models.Rate 
+                {
+                    id = 1,
+                    course_id = 1,
+                    content = "good",
+                    star = 4,
+                },
+                new Models.Rate
+                {
+                    id = 2 ,
+                    course_id = 1,
+                    content = "greatest course i ever joined",
+                    star = 5,
+                },
+                new Models.Rate
+                {
+                    id = 3,
+                    course_id = 1,
+                    content = "Would recommend this course",
+                    star = 5,
+                },
+                new Models.Rate
+                {
+                    id = 4,
+                    course_id = 1,
+                    content = "Worth to buy this course",
+                    star = 5,
+                }
+                );
+
+            context.Tests.AddOrUpdate(
+                new Models.Test
+                {
+                    id = 1,
+                    course_id = 1,
+                    content = "google doc link for course 1"
+                },
+                new Models.Test
+                {
+                    id = 2,
+                    course_id = 2,
+                    content = "google doc link for course 2"
+                },
+                new Models.Test
+                {
+                    id = 3,
+                    course_id = 3,
+                    content = "google doc link for course 3"
+                }
+                );
+
+            context.Results.AddOrUpdate(x => x.id,
+                new Models.Result
+                {
+                    id = 1,
+                    test_id = 1,
+                    user_id = "0f2c7802-9a9c-4a5c-97d5-71b3d2a0c0a1",
+                    link = "Student test",
+                    status = (int?)Models.Result.ResultStatus.PENDING,
+                },
+                new Models.Result
+                {
+                    id = 2,
+                    test_id = 1,
+                    user_id = "ac6caef2-8877-4e81-8d54-aa18b3cde28e",
+                    link = "Student test",
+                    status = (int?)Models.Result.ResultStatus.PASS,
+                },
+                new Models.Result
+                {
+                    id = 3,
+                    test_id = 2,
+                    user_id = "ac6caef2-8877-4e81-8d54-aa18b3cde28e",
+                    link = "Student test",
+                    status = (int?)Models.Result.ResultStatus.FAILED,
+                }
+                );
+            context.UserCourses.AddOrUpdate(x => x.user_id,
+                new Models.UserCourse
+                {
+                    user_id = "0f2c7802-9a9c-4a5c-97d5-71b3d2a0c0a1",
+                    course_id = 1,
+                    status = (int?)Models.UserCourse.UserCourseStatus.ACTIVE,
+                    type = (int?)Models.UserCourse.UserCourseType.BUYER,
+                },
+                new Models.UserCourse
+                {
+                    user_id = "ac6caef2-8877-4e81-8d54-aa18b3cde28e",
+                    course_id = 1,
+                    status = (int?)Models.UserCourse.UserCourseStatus.ACTIVE,
+                    type = (int?)Models.UserCourse.UserCourseType.BUYER,
+                },
+                new Models.UserCourse
+                {
+                    user_id = "ed2d675a-d574-4cb6-9e6d-708f89515a69",
+                    course_id = 1,
+                    status = (int?)Models.UserCourse.UserCourseStatus.ACTIVE,
+                    type = (int?)Models.UserCourse.UserCourseType.OWNER,
+                }
+            );
+
+            context.Organizations.AddOrUpdate(x => x.id , new Models.Organization {
+                id = 1,
+                description = "This is our private schools",
+                email = "privateschool@gmail.com",
+                name = "Private School",
+                thumbnail = "url image"
+            });
         }
     }
 }

@@ -17,7 +17,7 @@ namespace T1908EOnlineCourse.Models
         [StringLength(255)]
         public string content { get; set; }
 
-        public decimal? start { get; set; }
+        public decimal? star { get; set; }
 
         public virtual Course Course { get; set; }
     }

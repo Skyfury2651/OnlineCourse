@@ -42,6 +42,8 @@ namespace T1908EOnlineCourse.Models
 
         public int AccessFailedCount { get; set; }
 
+        public int balance { get; set; }
+
         [Required]
         [StringLength(256)]
         public string UserName { get; set; }
