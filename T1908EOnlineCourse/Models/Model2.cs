@@ -134,7 +134,7 @@ namespace T1908EOnlineCourse.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<Rate>()
-                .Property(e => e.start)
+                .Property(e => e.star)
                 .HasPrecision(18, 0);
 
             modelBuilder.Entity<Result>()

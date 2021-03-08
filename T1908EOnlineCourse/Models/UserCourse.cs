@@ -25,5 +25,15 @@ namespace T1908EOnlineCourse.Models
         public virtual AspNetUser AspNetUser { get; set; }
 
         public virtual Course Course { get; set; }
+
+        public enum UserCourseStatus
+        {
+            ACTIVE = 1 , DEACTIVE = 2
+        }
+
+        public enum UserCourseType
+        {
+            OWNER = 1 , BUYER = 2
+        }
     }
 }

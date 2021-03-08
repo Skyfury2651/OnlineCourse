@@ -24,5 +24,10 @@ namespace T1908EOnlineCourse.Models
         public virtual AspNetUser AspNetUser { get; set; }
 
         public virtual Test Test { get; set; }
+
+        public enum ResultStatus
+        {
+            PENDING = 0, PASS = 1, FAILED = 2,
+        }
     }
 }
