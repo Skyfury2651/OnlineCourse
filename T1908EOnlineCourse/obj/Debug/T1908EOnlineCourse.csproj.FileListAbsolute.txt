@@ -222,3 +222,16 @@ C:\Users\admin\Desktop\abc\OnlineCourse\T1908EOnlineCourse\bin\PagedList.dll
 C:\Users\admin\Desktop\abc\OnlineCourse\T1908EOnlineCourse\bin\PagedList.Mvc.dll
 C:\Users\admin\Desktop\abc\OnlineCourse\T1908EOnlineCourse\bin\PagedList.xml
 C:\Users\admin\Desktop\abc\OnlineCourse\T1908EOnlineCourse\bin\PagedList.Mvc.xml
+G:\Visual\OnlineCourse\T1908EOnlineCourse\bin\PagedList.dll
+G:\Visual\OnlineCourse\T1908EOnlineCourse\bin\PagedList.Mvc.dll
+G:\Visual\OnlineCourse\T1908EOnlineCourse\bin\PayPal.dll
+G:\Visual\OnlineCourse\T1908EOnlineCourse\bin\PagedList.xml
+G:\Visual\OnlineCourse\T1908EOnlineCourse\bin\PagedList.Mvc.xml
+G:\Visual\OnlineCourse\T1908EOnlineCourse\bin\PayPal.xml
+G:\Visual\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.Migrations.InitialMigration.resources
+G:\Visual\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.Migrations.NewMigration.resources
+G:\Visual\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.Migrations.DeleteOrganizationId.resources
+G:\Visual\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.Migrations.addImage.resources
+G:\Visual\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.Migrations.RemoveStringLimit.resources
+G:\Visual\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.Migrations.RemoveLimit.resources
+G:\Visual\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.csproj.GenerateResource.cache

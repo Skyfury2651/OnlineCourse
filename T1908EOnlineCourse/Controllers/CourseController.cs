@@ -38,16 +38,17 @@ namespace T1908EOnlineCourse.Controllers
             int pageNumber = (page ?? 1);
             return View(data.ToPagedList(pageNumber, pageSize));
         }
-        public ActionResult DetailCourse(int id)
+        public ActionResult DetailCourse(int? id)
         {
             var data = _db.Courses.Find(id);
+           
             if (data == null)
             {
                 return HttpNotFound();
             }
             return View(data);
         }
-        public ActionResult FilterCategories(int id)
+        public ActionResult FilterCategories(int? id)
         {
             var categories = _db.Categories.ToList();
             ViewBag.categories = categories;

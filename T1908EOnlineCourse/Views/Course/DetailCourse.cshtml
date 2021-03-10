@@ -118,7 +118,7 @@
                       
 
                 </ul>
-                <a href="#" class="primary-btn2 text-uppercase enroll rounded-0 text-white">Enroll the course</a>
+                @Html.ActionLink("Enroll the course", "PaymentWithPaypal", "Home" , new {courseId = Model.id },new {@class= "primary-btn2 text-uppercase enroll rounded-0 text-white" })
 
                 <h4 class="title">Reviews</h4>
                 <div class="content">
