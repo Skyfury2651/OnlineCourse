@@ -235,3 +235,8 @@ G:\Visual\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.Migration
 G:\Visual\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.Migrations.RemoveStringLimit.resources
 G:\Visual\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.Migrations.RemoveLimit.resources
 G:\Visual\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.csproj.GenerateResource.cache
+C:\Users\admin\Desktop\abc\OnlineCourse\T1908EOnlineCourse\bin\PayPal.dll
+C:\Users\admin\Desktop\abc\OnlineCourse\T1908EOnlineCourse\bin\PayPal.xml
+C:\Users\admin\Desktop\abc\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.csprojAssemblyReference.cache
+C:\Users\admin\Desktop\abc\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.Migrations.RemoveStringLimit.resources
+C:\Users\admin\Desktop\abc\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.Migrations.RemoveLimit.resources
