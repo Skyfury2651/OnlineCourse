@@ -156,16 +156,16 @@ namespace T1908EOnlineCourse.Controllers
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 ApplicationDbContext context = new ApplicationDbContext();
                 var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
-                if (!roleManager.RoleExists("Admin"))
+                if (!roleManager.RoleExists("Instructor"))
                 {
                     var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-                    role.Name = "Admin";
+                    role.Name = "Instructor";
                     roleManager.Create(role);
                 }
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    var result1 = UserManager.AddToRole(user.Id, "Admin");
+                    var result1 = UserManager.AddToRole(user.Id, "Instructor");
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                     // generate validate code
                     string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);

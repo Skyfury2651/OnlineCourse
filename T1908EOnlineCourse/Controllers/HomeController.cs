@@ -56,7 +56,7 @@ namespace T1908EOnlineCourse.Controllers
                     //CreatePayment function gives us the payment approval url  
                     //on which payer is redirected for paypal account payment  
                     // baseURL is the url on which paypal sendsback the data.  
-                    string baseURI = Request.Url.Scheme + "://" + Request.Url.Authority + "/Home/PaymentWithPayPal?courseId" + courseId + "&";
+                    string baseURI = Request.Url.Scheme + "://" + Request.Url.Authority + "/Home/PaymentWithPayPal?courseId=" + courseId + "&";
                     var createdPayment = this.CreatePayment(apiContext, baseURI + "guid=" + guid, course.name, course.price.ToString());
                     //get links returned from paypal in response to Create function call  
                     var links = createdPayment.links.GetEnumerator();
@@ -93,7 +93,8 @@ namespace T1908EOnlineCourse.Controllers
             {
                 Console.WriteLine(ex.Message);
             }
-            _db.UserCourses.Add(new UserCourse
+
+            _db.UserCourses.Add(new UserCourse()
             {
                 course_id = (int)courseId,
                 user_id = User.Identity.GetUserId(),
@@ -101,7 +102,7 @@ namespace T1908EOnlineCourse.Controllers
                 type = (int?)UserCourse.UserCourseType.BUYER
             });
 
-            _db.Transactions.Add(new Models.Transaction
+            _db.Transactions.Add(new Models.Transaction()
             {
                course_id = (int) courseId,
                status = 1,
@@ -110,6 +111,10 @@ namespace T1908EOnlineCourse.Controllers
                created_at = DateTime.Today,
                updated_at = DateTime.Today
             });
+            var userID = _db.UserCourses.Where(c => c.course_id == courseId && c.type == (int?) UserCourse.UserCourseType.OWNER).Single();
+            var user = _db.AspNetUsers.Find(userID.user_id);
+            user.balance = (course.price * 90)/100;
+            _db.SaveChanges();
 
             //on successful payment, show success page to user.  
             return RedirectToAction("DetailCourse", "Course", new

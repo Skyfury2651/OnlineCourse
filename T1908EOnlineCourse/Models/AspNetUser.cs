@@ -42,13 +42,11 @@ namespace T1908EOnlineCourse.Models
 
         public int AccessFailedCount { get; set; }
 
-        public int balance { get; set; }
+        public decimal? balance { get; set; }
 
         [Required]
         [StringLength(256)]
         public string UserName { get; set; }
-
-        //public decimal? price { get; set; }
 
         public int? organization { get; set; }
 
