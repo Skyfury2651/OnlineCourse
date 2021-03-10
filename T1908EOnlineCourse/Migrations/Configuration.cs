@@ -174,8 +174,8 @@ namespace T1908EOnlineCourse.Migrations
                 }
                 );
             context.Rates.AddOrUpdate(x => x.id,
-                
-                new Models.Rate 
+
+                new Models.Rate
                 {
                     id = 1,
                     course_id = 1,
@@ -184,7 +184,7 @@ namespace T1908EOnlineCourse.Migrations
                 },
                 new Models.Rate
                 {
-                    id = 2 ,
+                    id = 2,
                     course_id = 1,
                     content = "greatest course i ever joined",
                     star = 5,
@@ -276,12 +276,19 @@ namespace T1908EOnlineCourse.Migrations
                 }
             );
 
-            context.Organizations.AddOrUpdate(x => x.id , new Models.Organization {
+            context.Organizations.AddOrUpdate(x => x.id, new Models.Organization
+            {
                 id = 1,
                 description = "This is our private schools",
                 email = "privateschool@gmail.com",
                 name = "Private School",
                 thumbnail = "url image"
+            });
+
+            context.AspNetRoles.AddOrUpdate(x => x.Id, new Models.AspNetRole
+            {
+                Id = "f5abdf0d-7377-4954-8c67-b3110a35c7c9",
+                Name = "Instructor"
             });
         }
     }

@@ -186,6 +186,7 @@
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2323,6 +2324,9 @@
     <Content Include="Views\Shared\_LayoutClient.cshtml" />
     <Content Include="Views\Course\DetailCourse.cshtml" />
     <Content Include="Views\Home\FailureView.cshtml" />
+    <Content Include="Views\Shared\_LayoutManager.cshtml" />
+    <Content Include="Views\Teacher\Index.cshtml" />
+    <Content Include="Views\Teacher\InformationTable.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
