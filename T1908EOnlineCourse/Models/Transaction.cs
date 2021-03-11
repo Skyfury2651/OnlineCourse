@@ -8,7 +8,7 @@ namespace T1908EOnlineCourse.Models
 
     public partial class Transaction
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id { get; set; }
 
         [StringLength(128)]

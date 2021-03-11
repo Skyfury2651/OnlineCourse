@@ -218,6 +218,10 @@
     <Compile Include="Migrations\202103101152479_Update-Aspusers.Designer.cs">
       <DependentUpon>202103101152479_Update-Aspusers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103111631153_AddKeytTrasaction.cs" />
+    <Compile Include="Migrations\202103111631153_AddKeytTrasaction.Designer.cs">
+      <DependentUpon>202103111631153_AddKeytTrasaction.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AspNetRole.cs" />
@@ -2374,6 +2378,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103101152479_Update-Aspusers.resx">
       <DependentUpon>202103101152479_Update-Aspusers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103111631153_AddKeytTrasaction.resx">
+      <DependentUpon>202103111631153_AddKeytTrasaction.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -97,27 +97,27 @@ namespace T1908EOnlineCourse.Controllers
             {
                 Console.WriteLine(ex.Message);
             }
-
+            var userId = User.Identity.GetUserId();
             _db.UserCourses.Add(new UserCourse()
             {
                 course_id = (int)courseId,
-                user_id = User.Identity.GetUserId(),
+                user_id = userId,
                 status = (int?)UserCourse.UserCourseStatus.ACTIVE,
                 type = (int?)UserCourse.UserCourseType.BUYER
             });
 
             _db.Transactions.Add(new Models.Transaction()
             {
-               course_id = (int) courseId,
-               status = 1,
-               price = course.price,
-               user_id = User.Identity.GetUserId(),
-               created_at = DateTime.Today,
-               updated_at = DateTime.Today
+                course_id = (int)courseId,
+                status = 1,
+                price = DEBITAMT,
+                user_id = userId,
+                created_at = DateTime.Today,
+                updated_at = DateTime.Today
             });
-            var userID = _db.UserCourses.Where(c => c.course_id == courseId && c.type == (int?) UserCourse.UserCourseType.OWNER).Single();
+            var userID = _db.UserCourses.Where(c => c.course_id == courseId && c.type == (int?)UserCourse.UserCourseType.OWNER).Single();
             var user = _db.AspNetUsers.Find(userID.user_id);
-            user.balance = (course.price * 90)/100;
+            user.balance = user.balance + ((DEBITAMT * 90) / 100);
             _db.SaveChanges();
 
             //on successful payment, show success page to user.  

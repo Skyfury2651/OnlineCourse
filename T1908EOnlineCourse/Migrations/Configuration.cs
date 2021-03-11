@@ -252,36 +252,36 @@ namespace T1908EOnlineCourse.Migrations
                     status = (int?)Models.Result.ResultStatus.FAILED,
                 }
                 );
-            context.UserCourses.AddOrUpdate(x => x.user_id,
-                new Models.UserCourse
-                {
-                    user_id = "0f2c7802-9a9c-4a5c-97d5-71b3d2a0c0a1",
-                    course_id = 1,
-                    status = (int?)Models.UserCourse.UserCourseStatus.ACTIVE,
-                    type = (int?)Models.UserCourse.UserCourseType.BUYER,
-                },
-                new Models.UserCourse
-                {
-                    user_id = "ac6caef2-8877-4e81-8d54-aa18b3cde28e",
-                    course_id = 1,
-                    status = (int?)Models.UserCourse.UserCourseStatus.ACTIVE,
-                    type = (int?)Models.UserCourse.UserCourseType.BUYER,
-                },
-                new Models.UserCourse
-                {
-                    user_id = "87da706d-67cf-419b-836f-2c372e106174",
-                    course_id = 1,
-                    status = (int?)Models.UserCourse.UserCourseStatus.ACTIVE,
-                    type = (int?)Models.UserCourse.UserCourseType.OWNER,
-                },
-                new Models.UserCourse
-                {
-                    user_id = "87da706d-67cf-419b-836f-2c372e106174",
-                    course_id = 2,
-                    status = (int?)Models.UserCourse.UserCourseStatus.ACTIVE,
-                    type = (int?)Models.UserCourse.UserCourseType.OWNER,
-                }
-            );
+            //context.UserCourses.AddOrUpdate(x => x.user_id,
+            //    new Models.UserCourse
+            //    {
+            //        user_id = "0f2c7802-9a9c-4a5c-97d5-71b3d2a0c0a1",
+            //        course_id = 1,
+            //        status = (int?)Models.UserCourse.UserCourseStatus.ACTIVE,
+            //        type = (int?)Models.UserCourse.UserCourseType.BUYER,
+            //    }
+                //new Models.UserCourse
+                //{
+                //    user_id = "46ec4551-4cb2-4918-82ca-24294be2f3fa",
+                //    course_id = 1,
+                //    status = (int?)Models.UserCourse.UserCourseStatus.ACTIVE,
+                //    type = (int?)Models.UserCourse.UserCourseType.BUYER,
+                //},
+                //new Models.UserCourse
+                //{
+                //    user_id = "87da706d-67cf-419b-836f-2c372e106174",
+                //    course_id = 1,
+                //    status = (int?)Models.UserCourse.UserCourseStatus.ACTIVE,
+                //    type = (int?)Models.UserCourse.UserCourseType.OWNER,
+                //},
+                //new Models.UserCourse
+                //{
+                //    user_id = "87da706d-67cf-419b-836f-2c372e106174",
+                //    course_id = 2,
+                //    status = (int?)Models.UserCourse.UserCourseStatus.ACTIVE,
+                //    type = (int?)Models.UserCourse.UserCourseType.OWNER,
+                //}
+            //);
 
             context.Organizations.AddOrUpdate(x => x.id, new Models.Organization
             {

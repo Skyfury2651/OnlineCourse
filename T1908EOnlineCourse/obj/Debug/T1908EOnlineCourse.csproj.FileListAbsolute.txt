@@ -101,7 +101,6 @@ G:\Visual\OnlineCourse\T1908EOnlineCourse\bin\Microsoft.Owin.Security.Twitter.xm
 G:\Visual\OnlineCourse\T1908EOnlineCourse\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 G:\Visual\OnlineCourse\T1908EOnlineCourse\bin\Microsoft.Owin.Security.OAuth.xml
 G:\Visual\OnlineCourse\T1908EOnlineCourse\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-G:\Visual\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.csprojAssemblyReference.cache
 G:\Visual\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.csproj.CoreCompileInputs.cache
 G:\Visual\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.csproj.CopyComplete
 G:\Visual\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.dll
@@ -242,3 +241,4 @@ C:\Users\admin\Desktop\abc\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlin
 C:\Users\admin\Desktop\abc\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.Migrations.RemoveLimit.resources
 C:\Users\admin\Desktop\abc\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.Migrations.UpdateAspusers.resources
 C:\Users\admin\Desktop\abc\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.csprojAssemblyReference.cache
+G:\Visual\OnlineCourse\T1908EOnlineCourse\obj\Debug\T1908EOnlineCourse.Migrations.AddKeytTrasaction.resources
