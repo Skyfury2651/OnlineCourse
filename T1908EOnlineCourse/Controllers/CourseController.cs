@@ -1,7 +1,9 @@
-﻿using PagedList;
+﻿using Microsoft.AspNet.Identity;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
 using T1908EOnlineCourse.Models;
@@ -40,7 +42,11 @@ namespace T1908EOnlineCourse.Controllers
         }
         public ActionResult DetailCourse(int id)
         {
+            var currentId = User.Identity.GetUserId();
+            bool haveCourse = _db.UserCourses.Where(x => x.course_id == id && x.user_id == currentId).Any();
+            ViewBag.haveCourse = haveCourse;
             var data = _db.Courses.Find(id);
+
             if (data == null)
             {
                 return HttpNotFound();

@@ -38,6 +38,10 @@ namespace T1908EOnlineCourse.Controllers
 
             T1908EOnlineCourse.Models.Course course = _db.Courses.Find(courseId);
 
+            var coursePrice = course.price;
+            decimal DEBITAMT = Convert.ToDecimal(string.Format("{0:F2}", coursePrice));
+
+            string convertString = DEBITAMT.ToString();
             //getting the apiContext  
             APIContext apiContext = PaypalConfiguration.GetAPIContext();
             try
@@ -57,7 +61,7 @@ namespace T1908EOnlineCourse.Controllers
                     //on which payer is redirected for paypal account payment  
                     // baseURL is the url on which paypal sendsback the data.  
                     string baseURI = Request.Url.Scheme + "://" + Request.Url.Authority + "/Home/PaymentWithPayPal?courseId=" + courseId + "&";
-                    var createdPayment = this.CreatePayment(apiContext, baseURI + "guid=" + guid, course.name, course.price.ToString());
+                    var createdPayment = this.CreatePayment(apiContext, baseURI + "guid=" + guid, course.name, convertString);
                     //get links returned from paypal in response to Create function call  
                     var links = createdPayment.links.GetEnumerator();
                     string paypalRedirectUrl = null;
@@ -138,8 +142,6 @@ namespace T1908EOnlineCourse.Controllers
         }
         private Payment CreatePayment(APIContext apiContext, string redirectUrl, string name, string price)
         {
-            var Stringprice = price.Replace('.', ',');
-            price = Stringprice + ".00";
             //create itemlist and add item objects to it  
             var itemList = new ItemList()
             {

@@ -2,9 +2,8 @@
     ViewBag.Title = "_LayoutClient";
 }
 
-@*@{
-    var session = (TestMail.Common.UserAdminLogin)Session[TestMail.Common.CommonConstant.USERPROFILE_SESSION];
-}*@
+@using Microsoft.AspNet.Identity
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,20 +28,20 @@
     <header class="header_area">
         <div class="main_menu">
             @*<div class="search_input" id="search_input_box">
-                <div class="container">
-                    <form class="d-flex justify-content-between" method="GET" action="/Home/Course">
-                        <input type="text"
-                               class="form-control"
-                               id="search_input"
-                               name="search_input"
-                               placeholder="Search Here" />
-                        <button type="submit" class="btn"></button>
-                        <span class="ti-close"
-                              id="close_search"
-                              title="Close Search"></span>
-                    </form>
-                </div>
-            </div>*@
+                    <div class="container">
+                        <form class="d-flex justify-content-between" method="GET" action="/Home/Course">
+                            <input type="text"
+                                   class="form-control"
+                                   id="search_input"
+                                   name="search_input"
+                                   placeholder="Search Here" />
+                            <button type="submit" class="btn"></button>
+                            <span class="ti-close"
+                                  id="close_search"
+                                  title="Close Search"></span>
+                        </form>
+                    </div>
+                </div>*@
 
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container">
@@ -65,29 +64,13 @@
                          id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
                             <li class="nav-item active">
-                                @Html.ActionLink("Home", "Index","Home", null, new { @class = "nav-link" })
+                                @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="about-us.html">About</a>
+                                <a class="nav-link" href="#">About</a>
                             </li>
-                            <li class="nav-item submenu dropdown">
-                                <a href="#"
-                                   class="nav-link dropdown-toggle"
-                                   data-toggle="dropdown"
-                                   role="button"
-                                   aria-haspopup="true"
-                                   aria-expanded="false">Pages</a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        @Html.ActionLink("Course", "Index", "Course", null, new { @class = "nav-link" })
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="course-details.html">Course Details</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="elements.html">Elements</a>
-                                    </li>
-                                </ul>
+                            <li class="nav-item">
+                                @Html.ActionLink("Course", "Index", "Course", null, new { @class = "nav-link" })
                             </li>
                             <li class="nav-item submenu dropdown">
                                 <a href="#"
@@ -108,23 +91,24 @@
                             <li class="nav-item">
                                 @Html.ActionLink("Contact", "Contact", null, new { @class = "nav-link" })
                             </li>
-                            @*@if (session == null)
+                            @if (Request.IsAuthenticated)
                             {
                                 <li class="nav-item">
-                                    @Html.ActionLink("Sign In", "Login", "Account", null, new { @class = "nav-link" })
+                                    @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { @class = "nav-link" })
                                 </li>
+                                using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <li class="nav-item"><a href="javascript:document.getElementById('logoutForm').submit()" class="nav-link">Log off</a></li>
+                                }
                             }
                             else
                             {
-                                <li class="nav-item">
-                                    @Html.Label("Hello:" + session.UserName, new { @class = "nav-link test-class" })
-
-                                </li>
-
-                                <li class="nav-item">
-                                    @Html.ActionLink("Log Out", "Logout", "Account", new { @returnUrl = ViewContext.HttpContext.Request.Url.PathAndQuery }, new { @class = "nav-link" })
-                                </li>
-                            }*@
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li class="nav-item">@Html.ActionLink("Register", "Register", "Account", null, new { @class = "nav-link" })</li>
+                                    <li class="nav-item">@Html.ActionLink("Log in", "Login", "Account", null, new { @class = "nav-link" })</li>
+                                </ul>
+                            }
 
 
                             <li class="nav-item">
