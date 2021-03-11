@@ -269,8 +269,15 @@ namespace T1908EOnlineCourse.Migrations
                 },
                 new Models.UserCourse
                 {
-                    user_id = "ed2d675a-d574-4cb6-9e6d-708f89515a69",
+                    user_id = "87da706d-67cf-419b-836f-2c372e106174",
                     course_id = 1,
+                    status = (int?)Models.UserCourse.UserCourseStatus.ACTIVE,
+                    type = (int?)Models.UserCourse.UserCourseType.OWNER,
+                },
+                new Models.UserCourse
+                {
+                    user_id = "87da706d-67cf-419b-836f-2c372e106174",
+                    course_id = 2,
                     status = (int?)Models.UserCourse.UserCourseStatus.ACTIVE,
                     type = (int?)Models.UserCourse.UserCourseType.OWNER,
                 }
@@ -290,6 +297,44 @@ namespace T1908EOnlineCourse.Migrations
                 Id = "f5abdf0d-7377-4954-8c67-b3110a35c7c9",
                 Name = "Instructor"
             });
+            context.Transactions.AddOrUpdate(x => x.id, new Models.Transaction
+            {
+                id = 1,
+                status = 1,
+                price = 20,
+                course_id = 1,
+                user_id = "ac6caef2-8877-4e81-8d54-aa18b3cde28e",
+                created_at = DateTime.Now.AddDays(-30),
+                updated_at = DateTime.Now.AddDays(-30),
+            }, new Models.Transaction
+            {
+                id = 2,
+                status = 1,
+                price = 30,
+                course_id = 2,
+                user_id = "82838b2f-4a15-4b1b-b77e-8726c1f0e6e6",
+                created_at = DateTime.Now.AddDays(-10),
+                updated_at = DateTime.Now.AddDays(-10),
+            }, new Models.Transaction
+            {
+                id = 3,
+                status = 1,
+                price = 40,
+                course_id = 3,
+                user_id = "ed2d675a-d574-4cb6-9e6d-708f89515a69",
+                created_at = DateTime.Now,
+                updated_at = DateTime.Now,
+            }, new Models.Transaction
+            {
+                id = 4,
+                status = 1,
+                price = 2,
+                course_id = 4,
+                user_id = "46ec4551-4cb2-4918-82ca-24294be2f3fa",
+                created_at = DateTime.Now,
+                updated_at = DateTime.Now,
+            });
+
         }
     }
 }
