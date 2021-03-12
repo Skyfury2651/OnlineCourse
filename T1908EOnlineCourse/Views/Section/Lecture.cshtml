@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Lesson";
+    Layout = "~/Views/Shared/_LayoutClient.cshtml";
+}
+
+@model T1908EOnlineCourse.Models.Section
+<!--================Home Banner Area =================-->
+<section class="banner_area">
+    <div class="banner_inner d-flex align-items-center">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="banner_content text-center">
+                        <h2>@Model.Course.name</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================End Home Banner Area =================-->
+<!--================ Start Course Details Area =================-->
+<section class="course_details_area section_gap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 course_details_left">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/bWPMSSsVdPk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+
+            <div class="col-lg-4 right-contents">
+                <ul>
+                    @foreach (var item in @Model.Course.Sections)
+                    {
+                     <li>
+                        <a class="justify-content-between d-flex" href="#">
+                            <span>@item.name</span>
+                        </a>
+                     </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================ End Course Details Area =================-->

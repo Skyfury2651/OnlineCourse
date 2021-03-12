@@ -90,7 +90,7 @@
                                 <ul class="course_list">
                                     <li class="justify-content-between d-flex">
                                         <p>@item.name</p>
-                                        <a class="primary-btn text-uppercase" href="#">View Details</a>
+                                        @Html.ActionLink("Detail", "Lecture", "Section", new { id = item.id }, new { @class = "primary-btn text-uppercase" })
                                     </li>
                                 </ul>
                             }
@@ -137,7 +137,7 @@
                                 <span>Outstanding</span>
                             </div>
                             <div class="d-flex flex-row reviews justify-content-between">
-                                <span>Puncuality</span>
+                                <span>Punctuality</span>
                                 <div class="star">
                                     <i class="ti-star checked"></i>
                                     <i class="ti-star checked"></i>
